@@ -62,10 +62,6 @@ def Kroeger(infile=None, ee=None, thick=None, ang=None):
 
     # Get solution of Kroeger Equation to use in plotData
     P, Pvol = KroegerCore(edata, adata, epsdata, ee, thick)
-    np.savetxt('Kroeger_P.txt', P, delimiter='\n', fmt='%.18f')
-    np.savetxt('Kroeger_Pvol.txt', Pvol, delimiter='\n', fmt='%.18f')
-    np.savetxt('Kroeger_edata.txt', edata, delimiter='\n', fmt='%.18f')
-    np.savetxt('Kroeger_adata.txt', adata, delimiter='\n', fmt='%.18f')
 
     # Plot dielectric data used in the calculation
     ploteV(edata, np.vstack((np.real(epsdata), -np.imag(epsdata))).T,
